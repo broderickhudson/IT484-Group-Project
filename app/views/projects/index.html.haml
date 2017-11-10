@@ -1,0 +1,17 @@
+-#  This file is app/views/projects/index.html.haml
+%h1 All Projects
+
+%table#projects
+  %thead
+    %tr
+      %th Project Title
+      %th Description
+      %th More Info
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= project.title 
+        %td= project.description
+        %td= link_to "More about #{project.title}", project_path(project)
+
+= link_to 'Add new project', new_project_path

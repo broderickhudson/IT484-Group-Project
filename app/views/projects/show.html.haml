@@ -1,0 +1,15 @@
+-# in app/views/projects/show.html.haml
+
+%h2 Details about #{@project.title}
+
+%h3 Description:
+
+%p#description= @project.description
+
+%h3 Created by:
+
+%p#creator= @project.creator
+
+= link_to 'Edit', edit_project_path(@project)
+= button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?'
+= link_to 'Back to project list', projects_path
